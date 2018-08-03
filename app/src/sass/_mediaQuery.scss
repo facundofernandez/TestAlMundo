@@ -1,0 +1,64 @@
+@media (max-width:599px){
+
+    .hotels{
+
+        height: 100%;
+        overflow: hidden;
+    
+        .hotel{
+            &_informationsPrice{
+                padding: 20px 0 40px 0;
+                border-left:0;
+                border-top:rgba(0,0,0,.1) dotted 2px;
+            
+            }
+        }
+    }
+
+    .search{
+        
+        padding: 0;
+        
+        &_form{
+
+            h4{
+                display:none;  
+            }
+
+            
+            &_title{
+                &-mobile{
+                    display:block;
+
+                    .arrow{
+                        position: relative;
+                        right: auto;
+                        top: auto;
+                    }
+                }
+                
+            }
+            
+            &_name{
+                display: none;
+                &.open{
+                    display: block;
+                }
+                input{
+                    margin-bottom: 10px;
+                    padding: 5px;
+                }
+                
+            }
+
+            &_stars{
+                display: none;
+                &.open{
+                    display: block;
+                }
+            }
+        }
+    }
+
+}
+

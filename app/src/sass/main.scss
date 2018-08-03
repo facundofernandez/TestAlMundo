@@ -1,0 +1,39 @@
+$bg:#014A8F;
+$primaryColor:#1e81d0;
+$borderColor: #F5F5F5;
+
+*{
+    margin:0;padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif; 
+}
+
+
+body{
+    background: #F5F5F5;
+}
+
+.col-lg-12{
+    padding: 0;
+}
+
+.headerLogo{
+    padding:10px;    
+    background: $bg;
+}
+
+.hotels{
+    height: calc( 100vh - 120px );
+    overflow: scroll;
+    padding:20px;
+}
+
+.star{
+    width: 20px;
+    fill:#FBB900;
+}
+
+@import 'directiveSearch';
+@import 'directiveHotel';
+@import 'mediaQuery';
+

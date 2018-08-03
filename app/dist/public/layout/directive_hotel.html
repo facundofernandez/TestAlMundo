@@ -1,0 +1,23 @@
+<div class="hotel row col-lg-12">
+    <div class="col-lg-5">
+        <img class="hotel_img" ng-src="../assets/images/hotels/{{hotel.image}}" alt="">
+    </div>
+    <div class="hotel_informations col-lg-4">
+        <h4 class="hotel_name">{{hotel.name}}</h4>
+        <span class="hotel_stars">
+            <stars number='hotel.stars'></stars> 
+        </span>
+        <div class="hotel_amenities">
+            <img ng-repeat="amenitie in hotel.amenities" class="icon" src="../assets/icons/amenities/{{amenitie}}.svg" alt="">
+        </div>
+    </div>
+    <div class="hotel_informationsPrice col-xs-12 col-lg-3">
+        <div class="hotel_text">Precio por noche por habitacion</div>
+        <div class="hotel_price">
+            <span>ARS</span>
+            <span class="hotel_price-big">{{hotel.price | number:0}}</span>
+
+        </div>
+        <button class="hotel_button"> Ver hotel</button>
+    </div>
+</div>

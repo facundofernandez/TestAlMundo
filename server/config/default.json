@@ -1,0 +1,10 @@
+{
+    "Customer": {
+        "port": 8000,
+        "dbConfig": {
+            "host": "none",
+            "port": 5984,
+            "dbName": ""
+        }
+    }
+}

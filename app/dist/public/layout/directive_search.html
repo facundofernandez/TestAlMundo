@@ -1,0 +1,67 @@
+<form action="" class="search_form col-lg-12">
+
+    <div class="search_form_title-mobile" ng-click="open=!open" ng-init="open=false">
+        
+        <label for="name" >
+            Filtrar
+        </label>
+        <span class="arrow" ng-show="open">&#9650;</span>
+        <span class="arrow" ng-show="!open">&#9660;</span>
+    </div>
+    <h4 class="search_form_title">Filtros</h4>
+
+    <div class="search_form_name" ng-class="open ? 'open' : ''">
+        <span class="arrow" ng-show="searchFormNameOpen">&#9650;</span>
+        <span class="arrow" ng-show="!searchFormNameOpen">&#9660;</span>
+        <label for="name" ng-click="searchFormNameSwitch()">
+            <img src="../assets/icons/filters/search.svg" alt=""> Nombre de hotel
+        </label>
+        <div ng-show="searchFormNameOpen">
+            <div class="row around-lg">
+                <input class="col-xs-12 col-lg-7" type="text" ng-model="nameHotel" name="name" placeholder="Ingrese el nombre de hotel">
+                <button class="col-xs-12 col-lg-4" ng-click="filerHotels($event)">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+    </div>
+    <div class="search_form_stars" ng-class="open ? 'open' : ''">
+
+        <div class="search_form_stars_label">
+            <span class="arrow" ng-show="searchFormStarsOpen">&#9650;</span>
+            <span class="arrow" ng-show="!searchFormStarsOpen">&#9660;</span>
+            <label for="name" ng-click="searchFormStarsSwitch()">
+                <img src="../assets/icons/filters/star.svg" alt="">Estrellas
+            </label>
+        </div>
+
+        <div class="search_form_stars_items" ng-show="searchFormStarsOpen">
+            <label>
+                <input type="checkbox" name="checkbox.all" ng-model="checkbox.all"  ng-value="all" checked ng-change="checkboxStar()"> Todas las estrellas
+            </label>
+
+            <label for="star5">
+                <input type="checkbox" ng-model="checkbox.star5" id="star5" ng-value="star5" ng-change="checkboxStar()">
+                <stars number='5'></stars>
+            </label>
+
+            <label for="star4">
+                <input type="checkbox" ng-model="checkbox.star4" id="star4" ng-value="star4" ng-change="checkboxStar()">
+                <stars number='4'></stars>
+            </label>
+            <label for="star3">
+                <input type="checkbox" ng-model="checkbox.star3" id="star3" ng-value="star3" ng-change="checkboxStar()">
+                <stars number='3'></stars>
+            </label>
+            <label for="star2">
+                <input type="checkbox" ng-model="checkbox.star2" id="star2" ng-value="star2" ng-change="checkboxStar()">
+                <stars number='2'></stars>
+            </label>
+            <label for="star1">
+                <input type="checkbox" ng-model="checkbox.star1" id="star1" ng-value="star1" ng-change="checkboxStar()">
+                <stars number='1'></stars>
+            </label>
+
+        </div>
+
+</form>

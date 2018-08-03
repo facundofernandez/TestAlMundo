@@ -1,0 +1,132 @@
+
+.search{
+    padding:20px;
+    
+    .arrow{
+        pointer-events: none;   
+        right: 15px;
+        top: 15px;
+        color:$primaryColor;
+        position: absolute;   
+        &:hover{
+            cursor: pointer;
+        }             
+    }
+
+    &_form{
+        background: white;
+        box-shadow: #afafaf 0px 0px 7px;
+        
+        //padding:20px;
+
+        &_title{
+            padding:15px;
+            font-size: 1.1em;
+            border-bottom: 4px solid $borderColor;
+
+            &-mobile{
+                position: relative;
+                display:none;
+                color:$primaryColor;
+                text-align: center;
+                padding:15px;
+            }
+        }
+    
+        &_name{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            border-bottom: 4px solid $borderColor;
+            padding:15px;
+
+            img{
+                width: 20px;
+                padding-right: 5px;
+            }
+            
+            label{
+                color:$primaryColor;
+                &+div{
+                    padding-top: 10px;
+                }
+            }
+
+            input{
+                font-size: 1em;
+                border-radius:3px;
+            }
+
+            ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+                color: gray;
+                opacity: .7;
+            }
+
+            button{
+                padding: 5px;
+                font-size: 1.3em;
+                background: rgb(0, 54, 105);
+                border-radius: 5px;
+                color:white;
+                width: 90% ;
+
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    
+        &_stars{
+            position: relative;
+            padding:15px;
+            border-bottom: 4px solid $borderColor;
+            &_label{
+                
+                
+
+                img{
+                    width: 20px;
+                    padding-right: 5px;
+                }
+    
+                label{
+                    display:block;
+                    color:$primaryColor;
+                }
+            }
+    
+            &_items{
+                padding-top: 20px;
+
+                & > label{
+
+                    &:first-child input{
+                        margin-right: 5px;
+                    }
+
+                    display: flex;
+                    align-items: center;
+                    padding-bottom: 10px;
+
+                    &:last-child{
+                        padding-bottom: 0;
+                    }
+                    
+                    stars{
+                        padding-left: 5px; 
+                    }
+                }
+
+
+                img{
+                    width: 16px
+                }
+    
+               
+            }
+            
+        }
+    }
+
+}
