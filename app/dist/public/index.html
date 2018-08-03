@@ -1,12 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="APP" >
-
+<html lang="es" ng-app="APP" >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css" type="text/css">
+    <title>Examen técnico Almundo</title>
+    <link rel="stylesheet" href="npm/flexboxgrid.min.css" type="text/css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -16,16 +15,15 @@
 
     <div class="mainContent row">
 
-        <div class="search col-xs-12 col-lg-4">
+        <div class="search col-xs-12 col-sm-4 col-md-4 col-lg-4">
             <search-hotels hotels="hotels"></search-hotels>
         </div>
 
-        <div class="hotels col-xs-12 col-lg-8">
+        <div class="hotels col-xs-12 col-sm-8 col-md-8 col-lg-8">
             <hotel ng-repeat="hotel in hotels" hotel="hotel"></hotel>
+            <div class="empty" ng-show="!hotels.length">No hay resultados</div>
         </div>
     </div>
-
-
     <script src="js/main.js"></script>
 </body>
 

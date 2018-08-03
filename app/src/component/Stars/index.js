@@ -23,5 +23,4 @@ function controller($scope) {
             value: i
         })
     }
-
 }

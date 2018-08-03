@@ -16,7 +16,7 @@
     &_form{
         background: white;
         box-shadow: #afafaf 0px 0px 7px;
-        
+        border-radius: 2px;
         //padding:20px;
 
         &_title{
@@ -48,6 +48,9 @@
             
             label{
                 color:$primaryColor;
+                &:hover{
+                    cursor: pointer;
+                }
                 &+div{
                     padding-top: 10px;
                 }
@@ -83,8 +86,6 @@
             border-bottom: 4px solid $borderColor;
             &_label{
                 
-                
-
                 img{
                     width: 20px;
                     padding-right: 5px;
@@ -93,6 +94,10 @@
                 label{
                     display:block;
                     color:$primaryColor;
+                    &:hover{
+                        cursor: pointer;
+                    }
+    
                 }
             }
     
@@ -100,6 +105,11 @@
                 padding-top: 20px;
 
                 & > label{
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+    
 
                     &:first-child input{
                         margin-right: 5px;

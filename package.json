@@ -4,11 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development nodemon ./server",
-    "prod": "NODE_ENV=production nodemon ./server",
-    "build": "NODE_ENV=production webpack  --config './app/webpack.config.js'",
-    "watch": "NODE_ENV=development webpack --watch --config './app/webpack.config.js'",
-    "server-dev": "NODE_ENV=development webpack-dev-server --config './app/webpack.config.js'"
+    "server:dev": "NODE_ENV=development nodemon ./server",
+    "server:prod": "NODE_ENV=production node ./server",
+    "build": "NODE_ENV=production webpack  --config './app/webpack.prod.js'",
+    "watch:dev": "NODE_ENV=development PORT=8888 webpack-dev-server --watch --config './app/webpack.dev.js'",
+    "watch:prod": "NODE_ENV=production webpack-dev-server --watch --config './app/webpack.prod.js'"
+
   },
   "keywords": [],
   "author": "",
@@ -16,7 +17,7 @@
   "dependencies": {
     "angular": "^1.7.2",
     "config": "^2.0.1",
-    "firebase-admin": "^5.13.1"
+    "flexboxgrid": "^6.3.1"
   },
   "devDependencies": {
     "autoprefixer": "^9.1.0",
@@ -24,22 +25,21 @@
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "body-parser": "^1.18.3",
+    "copy-webpack-plugin": "^4.5.2",
     "cors": "^2.8.4",
     "css-loader": "^1.0.0",
     "cssnano": "^4.0.5",
-    "debug": "^3.1.0",
     "express": "^4.16.3",
-    "http-errors": "^1.7.0",
     "mini-css-extract-plugin": "^0.4.1",
     "morgan": "^1.9.0",
     "node-sass": "^4.9.2",
-    "npm": "^6.3.0",
     "postcss-loader": "^2.1.6",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.16.4",
     "webpack-cli": "^3.1.0",
-    "webpack-dev-server": "^3.1.5"
+    "webpack-dev-server": "^3.1.5",
+    "webpack-merge": "^4.1.4"
   }
 }

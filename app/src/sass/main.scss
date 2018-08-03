@@ -8,7 +8,6 @@ $borderColor: #F5F5F5;
     font-family: Arial, Helvetica, sans-serif; 
 }
 
-
 body{
     background: #F5F5F5;
 }
@@ -31,6 +30,15 @@ body{
 .star{
     width: 20px;
     fill:#FBB900;
+}
+
+.empty{
+    background: white;
+    box-shadow: #afafaf 0px 0px 7px;
+    border-radius: 2px;
+    padding: 20px;
+    text-align: center;
+    color:$primaryColor;
 }
 
 @import 'directiveSearch';
