@@ -84,8 +84,11 @@ npm run watch:prod
   * http://localhost:8000/hotels/stars/${stars}
   * http://localhost:8000/hotels/name/${name}/stars/${stars}
 
+  > ${stars} es un string de numeros seguido de comas.
+  > Ej: http://localhost:8000/hotels/name/Hotel/stars/3,2
 
-* Crear hoteles
+
+* Crear hotel
 
   * POST
   * http://localhost:8000/hotels
@@ -101,7 +104,7 @@ npm run watch:prod
     ```
 
 
-* Actualizar hoteles
+* Modificar hotel
 
   * PUT
   * http://localhost:8000/hotels
@@ -116,7 +119,7 @@ npm run watch:prod
     }
     ```
 
-* Actualizar hoteles
+* Eliminar hotel
 
   * DELETE
   * http://localhost:8000/hotels/${id}

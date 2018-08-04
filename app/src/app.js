@@ -22,6 +22,7 @@ angular.module('APP', [
     FactoryHotels.name,
     OnErrorSrc.name
 ])
+    .constant('URL_API', 'http://localhost:8000/hotels')
     .controller('mainController', ["$scope", 'api', function ($scope, api) {
        
         let _this = $scope;

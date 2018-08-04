@@ -3,7 +3,7 @@ import angular from 'angular';
 
 export default angular.module('FactoryHotels', [])
 
-    .factory('api', ['$http', '$q', function ($http, $q) {
+    .factory('api', ['$http', '$q','URL_API', function ($http, $q,URL_API) {
         return {
 
             getHoteles: function (params) {
@@ -19,7 +19,7 @@ export default angular.module('FactoryHotels', [])
                     if (!url.length && params && params.star) url += '/stars/' + params.star;
 
                     if(url.length) {
-                        resolve($http.get('http://localhost:8000/hotels' + url))
+                        resolve($http.get(URL_API + url))
                     } else {
                         reject({error:"No se completaron los parametros correctamente."})
                     }
