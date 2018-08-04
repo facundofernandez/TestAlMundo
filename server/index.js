@@ -9,7 +9,9 @@ app.set('port', config.port);
 const server = http.createServer(app);
 
 if(config.mode === 'development'){
+
     server.listen(config.port);
+
 }else{
     const { host, port, dbName, user, pass } = config.dbConfig;
 

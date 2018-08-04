@@ -1,15 +1,14 @@
 {
-  "name": "base1",
+  "name": "testAlMundo",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start:prod": "npm run server:prod & npm run watch:prod ",
-    "server:dev": "NODE_ENV=development nodemon ./server",
-    "server:prod": "NODE_ENV=production PORT=8000 node ./server",
+    "api:dev": "NODE_ENV=development nodemon ./server",
+    "api:prod": "NODE_ENV=production PORT=8000 node ./server",
     "build": "NODE_ENV=production webpack  --config './app/webpack.prod.js'",
-    "watch:dev": "NODE_ENV=development PORT=8888 webpack-dev-server --watch --config './app/webpack.dev.js'",
-    "watch:prod": "NODE_ENV=production PORT=8888 webpack-dev-server --watch --config './app/webpack.prod.js'"
+    "angular:dev": "NODE_ENV=development PORT=8888 webpack-dev-server --watch --config './app/webpack.dev.js'",
+    "angular:prod": "NODE_ENV=production PORT=8888 webpack-dev-server --config './app/webpack.prod.js'"
   },
   "keywords": [],
   "author": "",

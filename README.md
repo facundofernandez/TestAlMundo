@@ -29,6 +29,14 @@ Desktop | Mobile
 
 ### Comandos para iniciar la aplicación
 
+> **En modo developer se habilita:** 
+> * **Front-End**: servidor de la aplicacion en angular con watch de codigo.
+> * **Back-End**: servidor de la API con el manejo de datos con un json.
+
+> **En modo de producción se habilita:** 
+> * **Front-End**: servidor de la aplicacion en angular. 
+> * **Back-End**: servidor de la API con el manejo de datos con mongoDB en la nube,     con las opciones extras (CRUD).
+
 #### Clorar repositorio
 
 ```
@@ -38,7 +46,6 @@ git clone https://github.com/facundofernandez/TestAlMundo.git
 #### Instalar dependencias
 
 ```
-npm init
 npm install
 ```
 
@@ -47,16 +54,16 @@ npm install
 Para el desarrollo se utilizo nodemon. Si no lo dispone, instalarlo.
 
 ```
-npm run server:dev
+npm run api:dev
 ```
 
 #### Iniciar Front-End
 
 ```
-npm run watch:dev
+npm run angular:dev
 ```
 
-#### Construir Aplicación para Producción
+#### Si solo se quiere obtener el codigo de la aplicacion angular optimizado para Producción
 ```
 npm run build
 ```
@@ -66,13 +73,13 @@ npm run build
 ### Pruebas en Produccion (usando base de datos MongoDB en la nube)
 
 ```
-npm run server:prod
+npm run api:prod
 ```
 
 ### Iniciar Front-End
 
 ```
-npm run watch:prod
+npm run angular:prod
 ```
 
 ### Uso de la api CRUD, se desarrollo R-U-D (solo en producción)

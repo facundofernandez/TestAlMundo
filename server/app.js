@@ -4,6 +4,7 @@ let bodyParser = require('body-parser');
 const logger = require('morgan');
 
 const hotelsRouter = require('./routes/hotels');
+
 let app = express();
 
 app.use(cors())

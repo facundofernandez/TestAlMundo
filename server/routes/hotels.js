@@ -11,7 +11,7 @@ router
     .get('/name/:hotelName/stars/:stars', HotelController.getHotelsByNameAndStars);
 
 
-// EXTRAS: Solo a nivel API
+// EXTRAS: Solo a nivel API en modo produccion
 router
     .put('/', HotelController.putHotels)
     .post('/', HotelController.postHotels)
