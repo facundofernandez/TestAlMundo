@@ -21,12 +21,14 @@ function getHotelsByName(req, res) {
 
         if (config.mode === "production") {
             let regExpStrign = `${hotelName}`;
-            Hotel.find({ name: new RegExp(regExpStrign) }, (err, hotels) => {
-                
-                if (err) res.status(200).json({})
-
+            Hotel.find({ name: new RegExp(regExpStrign) })
+            .then((hotels) => {
                 res.status(200).json(hotels)
             })
+            .catch(()=>{
+                res.status(200).json({})
+            });
+            
 
         } else {
             let regExpStrign = `${hotelName.toLowerCase()}`;
@@ -45,12 +47,14 @@ function getHotelsByStars(req, res) {
 
         if (config.mode === "production") {
 
-            Hotel.find({ stars: { $in: stars.split(",") } }, (err, hotels) => {
-
-                if (err) res.status(200).json({})
-
+            Hotel.find({ stars: { $in: stars.split(",") } })
+            .then((hotels) => {
                 res.status(200).json(hotels)
             })
+            .catch((error)=>{
+                if (err) res.status(200).json({})
+            });
+            
 
         } else {
 
@@ -89,12 +93,13 @@ function getHotelsByNameAndStars(req, res) {
             stars: {
                 $in: stars.split(",")
             }
-        }).then((err, hotels) => {
-
-            if (err) res.status(200).json({})
-
+        })
+        .then((hotels) => {
             res.status(200).json(hotels)
         })
+        .catch((error)=>{
+            res.status(200).json({})
+        });
 
     } else {
 
@@ -141,13 +146,17 @@ function putHotels(req, res) {
 
             Hotel.update({ id: hotel.id }, {
                 $set: updateJson
-            }).then((newHotel) => {
+            })
+            .then((newHotel) => {
                 res
                     .status(200)
                     .json({
                         status: 200,
                         message: "Hotel Modificado"
                     })
+            })
+            .catch((error)=>{
+                res.status(200).json({})
             });
 
         })
