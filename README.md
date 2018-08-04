@@ -18,7 +18,7 @@ Crear una aplicación de busqueda de hoteles, aplicando dos filtros. El examen c
 * NodeJs 
 * Base de datos 
     * Desarrollo: Archivo json
-    * Producción: 
+    * Producción: MongoDb
 
 ### Muestra final
 
@@ -60,3 +60,63 @@ npm run watch:dev
 ```
 npm run build
 ```
+
+# Extras
+
+### Pruebas en Produccion (usando base de datos MongoDB en la nube)
+
+```
+npm run server:prod
+```
+
+### Iniciar Front-End
+
+```
+npm run watch:prod
+```
+
+### Uso de la api CRUD, se desarrollo R-U-D (solo en producción)
+
+* Obtener hoteles
+
+  * GET
+  * http://localhost:8000/hotels/name/${name}
+  * http://localhost:8000/hotels/stars/${stars}
+  * http://localhost:8000/hotels/name/${name}/stars/${stars}
+
+
+* Crear hoteles
+
+  * POST
+  * http://localhost:8000/hotels
+  * Body Json
+    ```
+    {
+        "id":"12345",
+        "name":"Hotel Prueba 2",
+        "stars": 1,
+        "price": 2000,
+        "image":"noim.png"
+    }
+    ```
+
+
+* Actualizar hoteles
+
+  * PUT
+  * http://localhost:8000/hotels
+  * Body Json
+    ```
+    {
+        "id":"12345",
+        "name":"Hotel Prueba Update",
+        "stars": 3,
+        "price": 2000,
+        "image":"noim.png"
+    }
+    ```
+
+* Actualizar hoteles
+
+  * DELETE
+  * http://localhost:8000/hotels/${id}

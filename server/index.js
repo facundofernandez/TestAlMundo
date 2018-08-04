@@ -1,19 +1,39 @@
 
-process.env["NODE_CONFIG_DIR"] = __dirname + "/config/";
-
+const mongoose = require('mongoose');
 const app = require('./app');
-const config = require('config');
+const config = require('./config');
 const http = require('http');
-const port = config.get('Customer.port') || '8000';
 
-   
-
-app.set('port', port);
+app.set('port', config.port);
 
 const server = http.createServer(app);
 
-server.listen(port);
+if(config.mode === 'development'){
+    server.listen(config.port);
+}else{
+    const { host, port, dbName, user, pass } = config.dbConfig;
 
-console.log("Servidor escuchando desde puerto:",port);
+    mongoose.Promise = global.Promise;
+    mongoose.connect(`mongodb://${user}:${pass}@${host}:${port}/${dbName}`,{ useNewUrlParser: true }).then(() => {
+    
+        console.log(`
+        --------------------------------------------------
+            
+            La conexion a la base de mongo fue exitosa
+        
+          User: ${user}        
+          Host: ${host} 
+          Puerto: ${port}
+          Collection: ${dbName}   
+          
+        --------------------------------------------------
+        `);
+    
+        server.listen(config.port);
+    
+    }).catch(err => console.log(err));
+}
+
+console.log("Servidor escuchando desde puerto:", config.port);
 
 

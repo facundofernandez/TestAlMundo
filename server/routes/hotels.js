@@ -10,11 +10,12 @@ router
     .get('/stars/:stars', HotelController.getHotelsByStars)
     .get('/name/:hotelName/stars/:stars', HotelController.getHotelsByNameAndStars);
 
-// En Contruccion
+
+// EXTRAS: Solo a nivel API
 router
-    .put('/:id', HotelController.getHotelsByName)
-    .post('/', HotelController.getHotelsByStars)
-    .delete('/:id', HotelController.getHotelsByNameAndStars);
+    .put('/', HotelController.putHotels)
+    .post('/', HotelController.postHotels)
+    .delete('/:id', HotelController.deleteHotels);
 
 module.exports = router;
 
